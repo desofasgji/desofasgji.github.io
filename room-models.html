@@ -1,0 +1,118 @@
+<!-- This file has been modified, original licence information below: -->
+<!--
+  Copyright 2017 Google Inc. All Rights Reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="examples.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <title>Room Models</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-5 mb-2">
+          <h1>Room Models</h1>
+          <p class="lead">
+            <img src="img/headphones.svg" class="icon-lg" alt="headphones">
+            Best experienced over headphones.
+          </p>
+          <p>
+            Click (or touch) and drag the sources
+            <img src="img/microphone.svg" class="icon" alt="source" id="sourceAIcon">,
+            <img src="img/musical-note.svg" class="icon" alt="source" id="sourceBIcon">
+            and the listener
+            <img src="img/person.svg" class="icon" alt="source" id="listenerIcon">,
+            to move them front-back/left-right around the room.
+            Select various options of room sizes and wall materials.
+          </p>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="roomDimensionsSelectWidth" class="col-form-label">Room Width</label>
+              <input type="number" id="roomDimensionsSelectWidth" class="form-control" value="4">
+              </input>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="roomDimensionsSelectHeight" class="col-form-label">Room Height</label>
+              <input type="number" id="roomDimensionsSelectHeight" class="form-control" value="3">
+              </input>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="roomDimensionsSelectDepth" class="col-form-label">Room Depth</label>
+              <input type="number" id="roomDimensionsSelectDepth" class="form-control" value="4">
+              </input>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="listenerHeight" class="col-form-label">Listener Height</label>
+              <input type="range" id="listenerHeight" class="form-control" min="0" max="3" value="1">
+              </input>
+	      <span id="listenerHeightValue">1</span>
+            </div>
+	    
+            <div class="form-group col-md-6">
+              <label for="roomMaterialsSelect" class="col-form-label">Wall Materials</label>
+              <select id="roomMaterialsSelect" class="form-control">
+                <option value="brick" selected>Brick</option>
+                <option value="curtains">Curtains</option>
+                <option value="marble">Marble</option>
+                <option value="outside">Outdoors</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 mb-2">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <img src="img/microphone.svg" class="icon-button">
+                </span>
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-primary" id="sourceAButton">Play</button>
+                </span>
+              </div>
+            </div>
+            <div class="col-md-3 mb-2">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <img src="img/musical-note.svg" class="icon-button">
+                </span>
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-primary" id="sourceBButton">Play</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 text-center">
+          <div style="width:100%">
+            <canvas id="canvas"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="resonance-audio.min.js"></script>
+    <script src="canvas-control.js"></script>
+    <script src="room-models.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>
